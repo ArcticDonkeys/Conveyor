@@ -10,4 +10,4 @@ Expected features are:
     Recommendation for resource management
     Recommendation for rescue agent management
     
-You can follow us from arcticdonkeys.weebly.com
+You can follow us from www.arcticdonkeys.weebly.com
