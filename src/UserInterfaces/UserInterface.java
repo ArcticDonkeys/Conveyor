@@ -171,14 +171,14 @@ public class UserInterface {
 		label.setForeground(Color.WHITE);
 		panel.add(label);
 		
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setForeground(Color.BLACK);
-		comboBox.setBounds(129, 168, 116, 27);
-		comboBox.addItem("Uskudar");
-		comboBox.addItem("Kadikoy");
-		comboBox.addItem("Besiktas");
-		comboBox.addItem("Bakirkoy");
-		frmArcticDonkeys.getContentPane().add(comboBox);
+		JComboBox<String> comboBoxForDistrict = new JComboBox<String>();
+		comboBoxForDistrict.setForeground(Color.BLACK);
+		comboBoxForDistrict.setBounds(129, 168, 116, 27);
+		comboBoxForDistrict.addItem("Uskudar");
+		comboBoxForDistrict.addItem("Kadikoy");
+		comboBoxForDistrict.addItem("Besiktas");
+		comboBoxForDistrict.addItem("Bakirkoy");
+		frmArcticDonkeys.getContentPane().add(comboBoxForDistrict);
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(164, 13, 288, 47);
@@ -211,12 +211,12 @@ public class UserInterface {
 		lblZvalueParameter.setBounds(13, 229, 124, 16);
 		contentPane.add(lblZvalueParameter);
 		
-		JComboBox<String> comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBounds(149, 221, 142, 27);
-		contentPane.add(comboBox_1);
-		comboBox_1.addItem("Randomized");
-		comboBox_1.addItem("DistanceFromSea");
-		comboBox_1.addItem("BuildingAge");
+		JComboBox<String> comboBoxForZValue = new JComboBox<String>();
+		comboBoxForZValue.setBounds(149, 221, 142, 27);
+		contentPane.add(comboBoxForZValue);
+		comboBoxForZValue.addItem("Randomized");
+		comboBoxForZValue.addItem("DistanceFromSea");
+		comboBoxForZValue.addItem("BuildingAge");
 	
 		btnSend.addActionListener(new ActionListener() {
 			@Override
