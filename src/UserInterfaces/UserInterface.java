@@ -21,6 +21,10 @@ import javax.swing.JButton;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 
@@ -33,6 +37,8 @@ public class UserInterface {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JPanel contentPane;
+	private String district;
+	private String parameter;
 
 	/**
 	 * Launch the application.
@@ -174,10 +180,8 @@ public class UserInterface {
 		JComboBox<String> comboBoxForDistrict = new JComboBox<String>();
 		comboBoxForDistrict.setForeground(Color.BLACK);
 		comboBoxForDistrict.setBounds(129, 168, 116, 27);
-		comboBoxForDistrict.addItem("Uskudar");
+		comboBoxForDistrict.addItem("Bagcilar");
 		comboBoxForDistrict.addItem("Kadikoy");
-		comboBoxForDistrict.addItem("Besiktas");
-		comboBoxForDistrict.addItem("Bakirkoy");
 		frmArcticDonkeys.getContentPane().add(comboBoxForDistrict);
 		
 		JPanel panel_5 = new JPanel();
@@ -221,7 +225,23 @@ public class UserInterface {
 		btnSend.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e){
+				parameter = comboBoxForZValue.getSelectedItem().toString();
+				district = comboBoxForDistrict.getSelectedItem().toString();
+				System.out.println(district);
+				System.out.println(parameter);
 				System.out.println(textField.getText());
+				String fs = System.getProperty("file.separator");
+				String path = "C:" + fs + "Users" + fs
+				        + "Arda" + fs + "Documents" + fs + "ArcGIS" + fs + "CreatingPoints" + fs;
+				System.out.println(path);
+				File file = new File(path, "ui.txt");
+		        try {
+		            BufferedWriter bw = new BufferedWriter(new FileWriter(file.getAbsoluteFile()));
+		            bw.write(district + " " + parameter);
+		            bw.close();
+		        } catch (IOException ex) {
+		            ex.printStackTrace();
+		        }
 			}
 		});
 
